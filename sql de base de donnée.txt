@@ -1,0 +1,33 @@
+nom de la base de données:usersdb
+
+CREATE TABLE courriers_entrants (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    Reference VARCHAR(255),
+    Expediteur VARCHAR(255),
+    NumeroInscriptionAcademie VARCHAR(255),
+    DateInscriptionAcademie DATE,
+    NumeroEnvoiEntiteExpeditrice VARCHAR(255),
+    DateEnvoiEntiteExpeditrice DATE,
+    CorrespondanceRequiertReponse VARCHAR(4),
+    Repondu VARCHAR(4),
+    DernierDelaiReponse DATE,
+    SujetCorrespondance VARCHAR(1000),
+    TelechargementCorrespondance VARCHAR(255),
+    Statut VARCHAR(255),
+    DateCreation TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE courriers_sortants (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    Reference VARCHAR(255) NOT NULL,
+    Destinataire VARCHAR(255) NOT NULL,
+    NumeroEnvoiAcademie VARCHAR(255),
+    DateEnvoiAcademie DATE,
+    ObjetCorrespondance VARCHAR(1000),
+    CorrespondanceRequiertReponse VARCHAR(10),
+    DernierDelaiReceptionReponse DATE,
+    ReponseRecue VARCHAR(10),
+    TelechargementCorrespondance VARCHAR(255),
+    Statut VARCHAR(50),
+    DateCreation TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
